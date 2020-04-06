@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: arr.forEach((item) => {...})
+# key: fore=>
+# group: array
+# --
+`(unless (eq (char-before) ?.) ".")`forEach(${1:item} => `(if (> (%lines %) 1) (concat "{ " (!%!) " }") %)`$0)`(if (eolp) ";")`

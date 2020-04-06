@@ -1,0 +1,2 @@
+;;; Generated package description from /Users/john.nicola/.emacs.d/elpa/modus-vivendi-theme-20200316.822/modus-vivendi-theme.el  -*- no-byte-compile: t -*-
+(define-package "modus-vivendi-theme" "20200316.822" "Accessible dark theme (WCAG AAA)" '((emacs "26.1")) :commit "db332337bba9f138fad9c9221fd103e1b5b4f079" :keywords '("faces" "theme" "accessibility") :authors '(("Protesilaos Stavrou" . "info@protesilaos.com")) :maintainer '("Protesilaos Stavrou" . "info@protesilaos.com") :url "https://gitlab.com/protesilaos/modus-themes")

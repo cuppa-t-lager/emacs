@@ -1,0 +1,6 @@
+./connect_to_cloud_db.sh 
+cd ~/.emacs.d/personal/
+ls
+ls -al
+rm helm-find-files-in-project.el 
+ls -al

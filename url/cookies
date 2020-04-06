@@ -1,0 +1,17 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '(("jira.atlassian.com"
+  [url-cookie "AWSALB" "+TtoPxbWsE4DbP2m7Rzifx3to4n/767Mm+WjtEusvEC9qg62jp/v8NwGLNosmR2ZOIc9qwWYPlk32v9WL9dSPa9JVJgzMpM5MDBfMYRo4wnmtzJz7XtF41JITtxR" "Fri, 03 Apr 2020 11:49:58 GMT" "/" "jira.atlassian.com" nil]
+  [url-cookie "AWSALBCORS" "+TtoPxbWsE4DbP2m7Rzifx3to4n/767Mm+WjtEusvEC9qg62jp/v8NwGLNosmR2ZOIc9qwWYPlk32v9WL9dSPa9JVJgzMpM5MDBfMYRo4wnmtzJz7XtF41JITtxR" "Fri, 03 Apr 2020 11:49:58 GMT" "/" "jira.atlassian.com" nil]))
+)
+(setq url-cookie-secure-storage
+ '(("upload.wikimedia.org"
+  [url-cookie "WMF-Last-Access" "27-Mar-2020" "Tue, 28 Apr 2020 00:00:00 GMT" "/" "upload.wikimedia.org" t]))
+)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:

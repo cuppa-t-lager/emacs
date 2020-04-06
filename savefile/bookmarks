@@ -1,0 +1,58 @@
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("custom.el"
+ (filename . "~/.emacs.d/personal/custom.el")
+ (front-context-string . "(custom-set-vari")
+ (rear-context-string)
+ (position . 1))
+("init.el"
+ (filename . "~/.emacs.d/init.el")
+ (front-context-string . ";;; init.el --- ")
+ (rear-context-string)
+ (position . 1))
+(".bash_profile"
+ (filename . "~/.bash_profile")
+ (front-context-string . "export PATH=\"/us")
+ (rear-context-string)
+ (position . 1))
+("myfunctions.el"
+ (filename . "~/.emacs.d/personal/myfunctions.el")
+ (front-context-string . ";;;;;;;;;;;;;;;;")
+ (rear-context-string)
+ (position . 1))
+("mymenu.el"
+ (filename . "~/.emacs.d/personal/mymenu.el")
+ (front-context-string . ";; Creating a ne")
+ (rear-context-string)
+ (position . 1))
+("hosts"
+ (filename .
+           #("/sudo:root@CNC0052:/etc/hosts" 1 5
+             (helm-ff-file t)
+             6 10
+             (helm-ff-file t)
+             11 18
+             (helm-ff-file t)
+             19 29
+             (helm-ff-file t)))
+ (front-context-string . "##\n#  Host Datab")
+ (rear-context-string)
+ (position . 1))
+("Application.cfc"
+ (filename . "~/Sites/concrete-platform/CP2/Application.cfc")
+ (front-context-string . "cgi.http_host , ")
+ (rear-context-string . "me  = ListFirst(")
+ (position . 57))
+("mykeycommands.el"
+ (filename . "~/.emacs.d/personal/mykeycommands.el")
+ (front-context-string . ";;Keys to unset\n")
+ (rear-context-string)
+ (position . 1))
+("personal-init.el"
+ (filename . "~/.emacs.d/personal/personal-init.el")
+ (front-context-string . ";; code\n(eval-wh")
+ (rear-context-string)
+ (position . 1))
+)
