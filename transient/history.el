@@ -3,8 +3,8 @@
   ("--ff"))
  (magit-commit nil)
  (magit-diff
-  ("--no-ext-diff" "--stat")
   ("--no-ext-diff")
+  ("--no-ext-diff" "--stat")
   ("-U2" "--no-ext-diff")
   ("--ignore-space-change" "--ignore-all-space" "--no-ext-diff")
   ("--ignore-space-change" "--ignore-all-space" "--no-ext-diff" "--stat"))

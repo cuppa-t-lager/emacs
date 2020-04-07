@@ -63,6 +63,18 @@
 ;;							   (auto-dim-other-buffers-mode t))))
 
 
+(use-package popup
+  :ensure t
+  :init
+  :config
+  ;; add some shotcuts in popup menu mode
+  (define-key popup-menu-keymap (kbd "M-n") 'popup-next)
+  (define-key popup-menu-keymap (kbd "TAB") 'popup-next)
+  (define-key popup-menu-keymap (kbd "<tab>") 'popup-next)
+  (define-key popup-menu-keymap (kbd "<backtab>") 'popup-previous)
+  (define-key popup-menu-keymap (kbd "M-p") 'popup-previous)
+  )
+
 
 
 (use-package web-mode
@@ -193,24 +205,43 @@
 ;;  (condition-case nil (imenu-add-to-menubar "INDEX") (error nil)))
 ;;(add-hook 'font-lock-mode-hook 'try-to-add-imenu)
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  back-button                                                           ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package back-button
   :init
   :config
   (back-button-mode 1)
   )
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; string-inflection                                                      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package string-inflection
   :init
   :config
   (back-button-mode 1)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ace-jump-mode                                                          ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package ace-jump-mode
   :init
   :config
   )
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; multiple cursors                                                       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package comment-dwim-2
+  :init
+  :config
+  (global-set-key (kbd "M-;") 'comment-dwim-2)
+  )
+
+
 
 
 
@@ -429,14 +460,14 @@
 (setq preludH-e-guru nil)
 ;; projectile stuff
 
-
+(setq projectile-sort-order 'recentf)
 
 (use-package helm-projectile
   :init
   (setq projectile-global-mode 1)
   :config
   (helm-projectile-on)
-  (setq projectile-switch-project-action 'helm-projectile-find-file)
+  (setq projectile-switch-project-action 'helm-projectile-recentf)
   )
 ;;(require 'helm-projectile)
 ;;(projectile-global-mode)
@@ -1464,6 +1495,10 @@
   :ensure t
   :config
   (editorconfig-mode 1))
+
+
+
+
 
 
 

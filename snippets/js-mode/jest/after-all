@@ -1,6 +1,6 @@
 # name : afterAll(() => { ... })
 # contributor : Seong Yong-ju <sei40kr@gmail.com>
-# key: after-all
+# key: jest
 # group: jest
 # --
 

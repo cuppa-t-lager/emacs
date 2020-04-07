@@ -51,7 +51,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#0d0d0d" "#5a5b5a"))
  '(magit-auto-revert-mode nil)
  '(magit-diff-hide-trailing-cr-characters nil)
- '(magit-ediff-dwim-show-on-hunks t)
+ '(magit-ediff-dwim-show-on-hunks t t)
  '(magit-post-refresh-hook (quote (diff-hl-magit-post-refresh)))
  '(nrepl-message-colors
    (quote
@@ -59,7 +59,7 @@
  '(objed-cursor-color "#cc6666")
  '(package-selected-packages
    (quote
-    (jest dumb-jump helm-R auto-complete-config auto-complete restclient-test restclient-helm restclient js-auto-beautify smart-mode-line modus-vivendi-theme csv-mode rjsx-mode afternoon-theme react-snippets auto-sudoedit iy-go-to-cha web-mode tide prettier-js dash-at-point doom-themes hippie-expand-mode hippie-expand helm-swoop multi-web-mode rainbow-mode ace-jump-mode seti-theme auto-yasnippet yas-global yasnippet use-package-ensure-system-package string-inflection material-theme company js2-mode markdown-mode helm-rg rainbow-delimiters ace-isearch back-button json-mode use-package exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number move-text magit projectile hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring beacon anzu ace-window)))
+    (comment-dwim-2 jest dumb-jump helm-R auto-complete-config auto-complete restclient-test restclient-helm restclient js-auto-beautify smart-mode-line modus-vivendi-theme csv-mode rjsx-mode afternoon-theme react-snippets auto-sudoedit iy-go-to-cha web-mode tide prettier-js dash-at-point doom-themes hippie-expand-mode hippie-expand helm-swoop multi-web-mode rainbow-mode ace-jump-mode seti-theme auto-yasnippet yas-global yasnippet use-package-ensure-system-package string-inflection material-theme company js2-mode markdown-mode helm-rg rainbow-delimiters ace-isearch back-button json-mode use-package exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number move-text magit projectile hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring beacon anzu ace-window)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(tab-stop-list
    (quote
@@ -96,8 +96,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-scrollbar-bg ((((class color) (min-colors 89)) (:background "#2f2f2f"))))
- '(helm-selection ((t (:background "#084666" :weight bold))))
- '(magit-diff-file-heading-selection ((t (:inherit magit-diff-file-heading-highlight :background "#084666" :foreground "#00d3d0" :weight bold))))
+ '(company-scrollbar-bg ((t (:background "#112b2b"))))
+ '(helm-selection ((t (:background "#2b1147"))))
+ '(magit-diff-file-heading-selection ((t (:foreground "#68a5e9" :inherit magit-diff-file-heading-highlight))))
  '(popup-summary-face ((t (:inherit popup-face :background "white" :foreground "dimgray"))))
  '(popup-tip-face ((t (:background "white" :foreground "#1a1a1a")))))

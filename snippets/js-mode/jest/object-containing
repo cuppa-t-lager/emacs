@@ -1,6 +1,6 @@
 # name : expect.objectContaining({ ... })
 # contributor : Seong Yong-ju <sei40kr@gmail.com>
-# key: object-containing
+# key: jest
 # group: jest
 # --
 

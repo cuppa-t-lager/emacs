@@ -1,6 +1,6 @@
 # name : afterEach(() => { ... })
 # contributor : Seong Yong-ju <sei40kr@gmail.com>
-# key: after-each
+# key: jest
 # group: jest
 # --
 

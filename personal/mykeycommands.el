@@ -13,7 +13,7 @@
 (global-set-key (kbd "<M-s-right>")       'windmove-right)
 (global-set-key (kbd "<M-s-left>")        'windmove-left)
 (global-set-key (kbd "<M-s-up>")          'windmove-up)
-(global-set-key (kbd "<M-s-down>")          'windmove-down)
+(global-set-key (kbd "<M-s-down>")        'windmove-down)
 (global-set-key (kbd "C-x o")             'helm-find-files)
 
 (global-set-key (kbd "M-s-´")             'eval-buffer)                            ;;e´

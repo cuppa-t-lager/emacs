@@ -1,6 +1,6 @@
 # name : describe('...', () => { ... })
 # contributor : Seong Yong-ju <sei40kr@gmail.com>
-# key: describe
+# key: jest
 # group: jest
 # --
 

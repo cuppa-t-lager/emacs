@@ -1,22 +1,21 @@
 ;;; -*- coding: utf-8 -*-
-(("/Users/john.nicola/.emacs.d/savefile/recentf" . 26809)
- ("/Users/john.nicola/.emacs.d/personal/mykeycommands.el" . 533)
- ("/Users/john.nicola/Sites/concrete-platform/CP2/Application.cfc" . 317)
- ("/Users/john.nicola/.emacs.d/personal/personal-init.el" . 8753)
- ("/Users/john.nicola/Sites/concrete-platform/CP2/core/objects/platform/config.cfc" . 525)
+(("/Users/john.nicola/.emacs.d/personal/myfunctions.el" . 12568)
+ ("/Users/john.nicola/.emacs.d/personal/personal-init.el" . 1826)
+ ("/Users/john.nicola/.emacs.d/savefile/recentf" . 26016)
+ ("/Users/john.nicola/Sites/concrete-platform/CP2/firebaseAddUsers.cfm" . 514)
+ ("/Users/john.nicola/Sites/concrete-platform/CP2/Application.cfc" . 346)
+ ("/Users/john.nicola/Sites/concrete-platform/CP2/core/objects/passPolicy/PassPolicy.cfc" . 28843)
+ ("/Users/john.nicola/.emacs.d/personal/mykeycommands.el" . 828)
+ ("/Users/john.nicola/Sites/concrete-platform/CP2/core/webcore/ckeditor/config.js" . 409)
+ ("/Users/john.nicola/Sites/concrete-platform/CP2/public_first_login.cfm" . 54)
+ ("/Users/john.nicola/Sites/concrete-platform/CP2/core/objects/platform/config.cfc" . 444)
+ ("/Users/john.nicola/.emacs.d/elpa/comment-dwim-2-20190105.1653/comment-dwim-2-autoloads.el" . 1165)
+ ("/Users/john.nicola/.emacs.d/personal/custom.el" . 6865)
+ ("/Users/john.nicola/.emacs.d/.git/config" . 371)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/application/pAdmin/addUser.cfm" . 3879)
  ("/Users/john.nicola/.emacs.d/snippets/js-mode/jquery/get" . 130)
- ("/Users/john.nicola/Sites/concrete-platform/CP2/core/objects/passPolicy/PassPolicy.cfc" . 29502)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/webcore/css/admin/addUser.css" . 333)
  (#("/sudo:root@CNC0052:/etc/hosts" 1 5
-    (helm-ff-file t match-part
-                  #("/sudo:root@CNC0052:/etc/hosts" 1 5
-                    (helm-ff-file t)
-                    6 10
-                    (helm-ff-file t)
-                    11 18
-                    (helm-ff-file t)))
-    6 10
     (match-part
      #("/sudo:root@CNC0052:/etc/hosts" 1 5
        (helm-ff-file t)
@@ -25,22 +24,27 @@
        11 18
        (helm-ff-file t))
      helm-ff-file t)
+    6 10
+    (helm-ff-file t match-part
+                  #("/sudo:root@CNC0052:/etc/hosts" 1 5
+                    (helm-ff-file t)
+                    6 10
+                    (helm-ff-file t)
+                    11 18
+                    (helm-ff-file t)))
     11 18
-    (match-part
-     #("/sudo:root@CNC0052:/etc/hosts" 1 5
-       (helm-ff-file t)
-       6 10
-       (helm-ff-file t)
-       11 18
-       (helm-ff-file t))
-     helm-ff-file t))
+    (helm-ff-file t match-part
+                  #("/sudo:root@CNC0052:/etc/hosts" 1 5
+                    (helm-ff-file t)
+                    6 10
+                    (helm-ff-file t)
+                    11 18
+                    (helm-ff-file t))))
   . 760)
- ("/Users/john.nicola/.emacs.d/snippets/js-mode/req" . 99)
  ("/Users/john.nicola/Sites/x-web/src/pages/ErrorPage/index.js" . 421)
  ("/Users/john.nicola/.emacs.d/snippets/js-mode/reactjs/cc.yasnippet" . 75)
  ("/Users/john.nicola/.emacs.d/snippets/js-mode/reactjs/cdm.yasnippet" . 144)
  ("/Users/john.nicola/.emacs.d/snippets/js-mode/reactjs/cdu.yasnippet" . 178)
- ("/Users/john.nicola/.emacs.d/snippets/js-mode/function" . 136)
  ("/Users/john.nicola/Sites/x-web/src/pages/Logout/index.js" . 546)
  ("/Users/john.nicola/.emacs.d/snippets/js-mode/jest/after-each" . 150)
  ("/Users/john.nicola/.emacs.d/snippets/js-mode/jest/array-containing" . 130)
@@ -56,11 +60,9 @@
  ("/Users/john.nicola/.emacs.d/elpa/jest-20200318.237/jest-autoloads.el" . 1973)
  ("/Users/john.nicola/.emacs.d/elpa/dash-functional-20191109.1327/dash-functional-autoloads.el" . 506)
  ("/Users/john.nicola/.emacs.d/elpa/magit-popup-20200306.223/magit-popup-autoloads.el" . 492)
- ("/Users/john.nicola/.emacs.d/personal/custom.el" . 6848)
  ("/Users/john.nicola/Sites/one-redux/src/bootstrap.js" . 1560)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/objects/platform/brandingConfig.cfc" . 983)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/application/pPassPolicy/inc/public_authentication_validate.cfm" . 986)
- ("/Users/john.nicola/Sites/concrete-platform/CP2/public_first_login.cfm" . 56)
  ("/Users/john.nicola/Sites/one-redux/.eslintrc" . 121)
  ("/Users/john.nicola/Sites/x-web/src/auth/index.js" . 343)
  ("/Users/john.nicola/Sites/one-redux/src/api/assets.js" . 168)
@@ -71,7 +73,6 @@
  ("/Users/john.nicola/Sites/x-web/src/pages/Files/Preview.js" . 823)
  ("/Users/john.nicola/Sites/one-redux/package.json" . 625)
  ("/Users/john.nicola/Sites/x-web/src/state/authenticationError.js" . 335)
- ("/Users/john.nicola/Sites/concrete-platform/CP2/firebaseAddUsers.cfm" . 780)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/edit_user.cfm" . 15904)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/objects/admin/user.cfc" . 882)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/application/admin/users/editUser.cfm" . 792)
@@ -113,7 +114,6 @@
  ("/Users/john.nicola/Sites/universal-login/src/pages/logout.js" . 513)
  ("/Users/john.nicola/Sites/platform/packages/api-gateway/src/index.js" . 223)
  ("/Users/john.nicola/Sites/platform/packages/firebase-api/src/models/firebase.js" . 3264)
- ("/Users/john.nicola/.emacs.d/snippets/js-mode/for" . 83)
  ("/Users/john.nicola/.emacs.d/elpa/auto-complete-20170125.245/auto-complete-autoloads.el" . 1924)
  ("/Users/john.nicola/.npmrc" . 71)
  ("/Users/john.nicola/Sites/platform/packages/firebase-api/src/index.js" . 53)
@@ -218,7 +218,6 @@
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/root/index.cfm" . 754)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/webcore/src/CP/communicate/views/Content.js" . 587)
  ("/Users/john.nicola/Sites/concrete-platform/cypress/integration/Manage/test-spec.js" . 521)
- ("/Users/john.nicola/.emacs.d/personal/myfunctions.el" . 12004)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/webcore/src/CP/core/RecentPagesList/collections/RecentPagesCollection.js" . 138)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/objects/publish/page.cfc" . 424)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/objects/platform/shoppingbasket.cfc" . 6474)
@@ -285,7 +284,6 @@
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/application/pPassPolicy/public.cfm" . 495)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/layout/header.cfm" . 773)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/application/pFormBuilder/collectorSettings.cfm" . 2662)
- ("/Users/john.nicola/.emacs.d/snippets/js-mode/arrow" . 85)
  ("/Users/john.nicola/Sites/universal-login/firebaseConfig.js" . 436)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/application/functions.cfm" . 13068)
  ("/Users/john.nicola/Sites/universal-login/yarn.lock" . 480649)
@@ -372,7 +370,6 @@
  ("/Users/john.nicola/Sites/x-web/src/"
   (dired-filename . "/Users/john.nicola/Sites/x-web/src/AppContainer.js"))
  ("/Users/john.nicola/Sites/x-web/src/AppContainer.js" . 416)
- ("/Users/john.nicola/Sites/concrete-platform/CP2/core/webcore/ckeditor/config.js" . 873)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/objects/jobManagement/database.cfc" . 1640)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/core/objects/platform/notification.cfc" . 571)
  ("/Users/john.nicola/Sites/concrete-platform/CP2/admin_user_send_access.cfm" . 2232)

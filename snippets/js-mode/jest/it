@@ -1,6 +1,6 @@
 # name : it('...', () => { ... })
 # contributor : Seong Yong-ju <sei40kr@gmail.com>
-# key: it
+# key: jest
 # group: jest
 # --
 

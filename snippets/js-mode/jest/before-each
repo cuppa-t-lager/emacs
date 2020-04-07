@@ -1,6 +1,6 @@
 # name : beforeEach(() => { ... })
 # contributor : Seong Yong-ju <sei40kr@gmail.com>
-# key: before-each
+# key: jest
 # group: jest
 # --
 
