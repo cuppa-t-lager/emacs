@@ -2,6 +2,11 @@
 (run-with-idle-timer 2 t (lambda () (garbage-collect)))
 
 
+(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'super)
+(setq mac-function-modifier 'hyper)
+(setq mac-pass-command-to-system nil)
+
 ;; setup files ending in “.js” to open in js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 
@@ -15,6 +20,12 @@
 (setq use-package-always-ensure t)
 
 (setq history-length 100)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; themes                                                                 ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(load "~/.emacs.d/personal/themes")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; prelude configuration                                                  ;;
@@ -63,112 +74,18 @@
 ;;							   (auto-dim-other-buffers-mode t))))
 
 
-(use-package popup
-  :ensure t
-  :init
-  :config
-  ;; add some shotcuts in popup menu mode
-  (define-key popup-menu-keymap (kbd "M-n") 'popup-next)
-  (define-key popup-menu-keymap (kbd "TAB") 'popup-next)
-  (define-key popup-menu-keymap (kbd "<tab>") 'popup-next)
-  (define-key popup-menu-keymap (kbd "<backtab>") 'popup-previous)
-  (define-key popup-menu-keymap (kbd "M-p") 'popup-previous)
-  )
-
-
-
-(use-package web-mode
-  :ensure t
-  :init
-  :config
-  )
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-(add-hook 'web-mode-hook
-          (lambda ()
-            (when (string-equal "tsx" (file-name-extension buffer-file-name))
-              (setup-tide-mode))))
-;; enable typescript-tslint checker
-;;(flycheck-add-mode 'typescript-tslint 'web-mode)
-
-
-
-(use-package helm
-  :ensure t
-  :init (progn
-          (require 'helm-config)
-          (helm-mode 1)
-          )
-  :demand t
-  :bind (
-         ("M-x"     . helm-M-x)
-         ("M-<f5>"  . helm-find-files)
-         ([f10]     . helm-buffers-list)
-         ("M-y"     . helm-show-kill-ring)
-         ([S-f10]   . helm-recentf)
-         :map helm-map
-         ("<tab>"   . helm-execute-persistent-action)
-         ("<left>"  . helm-previous-source)
-         ("<right>" . helm-next-source)
-         )
-  )
-
-
-
-(use-package helm-R
-  :ensure t
-  :init
-  :config
-  )
-
-
-
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; themes                                                                 ;;
+;; load-package                                                                 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package material-theme
-  :ensure t
-  :init
-  :config
-  ;;(load-theme 'material)
-  )
+(load "~/.emacs.d/personal/packages")
 
-(use-package molokai-theme
-  :ensure t
-  :init
-  ;;(setq molokai-theme-kit t)
-  :config
-  ;;(load-theme 'molokai)
-  )
 
-(use-package nimbus-theme
-  :ensure t
-  :init
-  :config
-  ;;(load-theme 'nimbus)
-  )
 
-(use-package doom-themes
-  :ensure t
-  :init
-  :config
-  ;;(load-theme 'doom-one)
-  )
 
-(use-package modus-vivendi-theme
-  :ensure t
-  :init
-  :config
-  (load-theme 'modus-vivendi)
-  )
 
-(use-package smart-mode-line
-  :ensure t
-  :init
-  (setq smart-mode-line-enabled t)
-  :config
-  )
+
+
+
 
 (beacon-mode 1)
 
@@ -192,149 +109,28 @@
 
 ;; Corrects (and improves) org-mode's native fontification.
 ;;(doom-themes-org-config)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; use themes                                                             ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-
-
-
 
 ;;(defun try-to-add-imen ()
 ;;  (condition-case nil (imenu-add-to-menubar "INDEX") (error nil)))
 ;;(add-hook 'font-lock-mode-hook 'try-to-add-imenu)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;  back-button                                                           ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package back-button
-  :init
-  :config
-  (back-button-mode 1)
-  )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; string-inflection                                                      ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package string-inflection
-  :init
-  :config
-  (back-button-mode 1)
-  )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ace-jump-mode                                                          ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package ace-jump-mode
-  :init
-  :config
-  )
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; multiple cursors                                                       ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package comment-dwim-2
-  :init
-  :config
-  (global-set-key (kbd "M-;") 'comment-dwim-2)
-  )
 
 
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; multiple cursors                                                       ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package multiple-cursors
-  :ensure t
-  :defer t
-  :init
-  :bind
-  ("<s-up>"  . mc/edit-lines)
-  ("<s-left>"    . mc/mark-previous-like-this)
-  ("<s-right>"  . mc/mark-next-like-this)
-  ("<s-down>" . mc/mark-all-like-this)
-  )
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; iy-go-to-char                                                          ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package iy-go-to-char
-  :ensure t
-  :defer t
-  :init
-  :bind
-  ("C-c ."  . iy-go-to-char)
-  ("C-c ,"  . iy-go-to-char-backwards)
-  )
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; auto-sudoedit                                                         ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package auto-sudoedit
-  :ensure t
-  :defer t
-  :init
-  :bind
-  )
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; jest
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package jest
-  :ensure t
-  :defer t
-  :init
-  :bind
-  ("C-x f" . jest-file)
-  ;;("C-x j f i d" . jest-jest-file-dwim)
-  ;;("C-x j f u" . jest-function)
-  ;;("C-x j f u  d" . jest-function-dwim)
-  ;;("C-x j l f" . jest-last-failed)
-  ;;("C-x j r" . jest-repeat)
-  )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; js2-mode: enhanced JavaScript editing mode
-;; https://github.com/mooz/js2-mode
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;(use-package js3-mode
-;;  :mode (("\\.js$" . js2-mode))
-;;  :hook ((js3-mode . (lambda ()
-;;                       ;;(flycheck-mode)
-;;                       (my-tide-setup-hook)
-;;                       (company-mode))))
-;;  :config
-;;  ;; have 2 space indentation by default
-;;  (setq js-indent-level 4
-;;        js2-basic-offset 4
-;;        js-chain-indent t)
-
-;;  ;; use eslint_d insetad of eslint for faster linting
-;;  ;;(setq flycheck-javascript-eslint-executable "eslint_d")
-
-;;  ;; Try to highlight most ECMA built-ins
-;;  (setq js2-highlight-level 3)
-
-;;  ;; turn off all warnings in js2-mode
-;;  (setq js2-mode-show-parse-errors nil)
-;;  (setq js2-mode-show-strict-warnings nil)
-;;  (setq js2-strict-missing-semi-warning nil)
-;;
-;; )
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; so-long                                                                ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(when (require 'so-long nil :noerror)
-  (global-so-long-mode 1))
+
+
+
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -393,16 +189,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; dumb jump                                                              ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(global-unset-key (kbd "H-s-g"))
-(use-package dumb-jump
-  :bind (("M-s-ø" . dumb-jump-go-other-window)   ;;oø
-         ("M-s-©" . dumb-jump-go)                ;;g©
-         ("M-s-π" . dumb-jump-go-prompt)         ;;pπ
-         ("M-s-∫" . dumb-jump-back)              ;;b∫
-         ("M-s-œ" . dumb-jump-quick-look))       ;;qœ
-  :config (setq dumb-jump-selector 'pop-menu) ;; (setq dumb-jump-selector 'ivy)
-  (add-hook 'dumb-jump-after-jump-hook 'recenter-top-bottom)
-  :ensure)
+
+
 
 
 ;;(defun auto-complete-mode-maybe ()
@@ -462,13 +250,7 @@
 
 (setq projectile-sort-order 'recentf)
 
-(use-package helm-projectile
-  :init
-  (setq projectile-global-mode 1)
-  :config
-  (helm-projectile-on)
-  (setq projectile-switch-project-action 'helm-projectile-recentf)
-  )
+
 ;;(require 'helm-projectile)
 ;;(projectile-global-mode)
 ;;(setq projectile-completion-system 'helm)
@@ -492,9 +274,9 @@
 
 ;;; hilite-line
 ;;(global-hl-line-mode 1)
-(set-face-background 'hl-line "#084666")
-;;(set-face-attribute 'region nil :background "#614A4A")
-;;(set-face-attribute 'region nil :foreground "white")
+;;(set-face-background 'hl-line "#084666")
+(set-face-attribute 'region nil :background "#FF781F")
+(set-face-attribute 'region nil :foreground "white")
 (setq linum-format "%d")
 ;;(set-cursor-color "Yellow")
 
@@ -503,19 +285,7 @@
 
 ;; rainbow delimeters mode
 
-(use-package rainbow-delimiters
-  :ensure t
-  :init
-  :config
-  (rainbow-delimiters-mode t)
-  )
 
-(use-package rainbow-mode
-  :ensure t
-  :init
-  :config
-  (rainbow-mode t)
-  )
 
 
 
@@ -525,38 +295,19 @@
 (add-to-list 'auto-mode-alist '("\\.el\\'"  . lisp-mode))
 
 
-
-(use-package yasnippet
-  :init
-  :config
-  (yas-global-mode 1)
-  )
-
-
-(use-package auto-yasnippet
-  :init
-  :config
-  )
+(setq flycheck-javascript-eslint-executable "eslint_d")
+;;(add-hook 'flycheck-mode-hook 'add-node-modules-path)
+;; Enable flycheck globally
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(global-flycheck-mode)
+;;(setq flycheck-check-syntax-automatically '(mode-enabled save))
 
 
-
-(use-package restclient
-  :init
-  :config
-  )
-
-
-(use-package restclient-helm
-  :init
-  :config
-  )
-
-
-(use-package restclient-test
-  :init
-  :config
-  )
-
+;;(defun web-mode-init-prettier-hook ()
+;;  (add-node-modules-path)
+;;  (prettier-js-mode)
+;;  )
+;;(add-hook 'web-mode-hook  'web-mode-init-prettier-hook)
 
 
 
@@ -617,7 +368,7 @@
 ;;(add-hook 'js2-mode-hook         'emmet-mode) ;; enable Emmet's css abbreviation.
 ;;(add-hook 'js3-mode-hook         'emmet-mode) ;; enable Emmet's css abbreviation.
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
-(global-set-key "\C-x\ \C-e"     'emmet-expand-line)
+
 
 
 ;;(add-hook 'html-mode-hook
@@ -652,17 +403,6 @@
 
 
 ;;(require 'iy-go-to-char)
-
-;;; smartparens-el
-(add-hook 'js-mode-hook 'smartparens-mode)
-(global-set-key (kbd "<M-right>") 'sp-forward-sexp)
-(global-set-key (kbd "<M-left>") 'sp-backward-sexp)
-
-(global-set-key (kbd "C-x v e") 'vc-ediff)
-(global-set-key (kbd "C-x 2") 'split-window-below)
-
-
-
 
 
 
@@ -922,45 +662,10 @@
 		    ("diams" . 9830)))
 
 
-;;ibuffer
-;;(global-set-key (kbd "C-x b") 'ibuffer)
-;;(autoload 'ibuffer "ibuffer" "List buffers." t)
-
-(use-package magit
-  :init
-  (setq magit-ediff-dwim-show-on-hunks t)
-  :config
-  (add-hook 'after-save-hook 'magit-after-save-refresh-status)
-  (setq magit-set-upstream-on-push t)
-  (setq magit-ediff-dwim-show-on-hunks t)
-  (setq magit-diff-hide-trailing-cr-characters t)
-  )
-
-;;(setq magit-visit-ref-behavior '(checkout-any focus-on-ref))
-;;(require 'magit-gitflow)
-;;(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
-;;(add-hook 'after-save-hook 'magit-after-save-refresh-status)
-(setq magit-set-upstream-on-push t)
-;;(add-hook 'magit-status-mode-hook 'magit-filenotify-mode)
-(setq magit-ediff-dwim-show-on-hunks t)
-;;(add-hook 'before-save-hook 'my-clean-up-buffer)
 (add-hook 'after-save-hook 'delete-trailing-whitespace )
 
 
 (load "~/.emacs.d/personal/myfunctions")
-
-
-(use-package ace-isearch
-  :init
-  :config
-  (global-ace-isearch-mode +1))
-
-
-(use-package dash-at-point
-  :init
-  :config
-  (add-to-list 'dash-at-point-mode-alist '(rjsx-mode . "js"))
-  )
 
 
 (setq mac-allow-anti-aliasing t)
@@ -988,7 +693,7 @@
 ;; use tabs insead of spaces
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
-(global-set-key (kbd "<C-tab>") 'indent-relative)
+
 
 
 ;;(add-hook 'anzu-mode-hook (lambda () (electric-indent-mode -1)))
@@ -1173,63 +878,12 @@
   (define-key ediff-mode-map "3" 'ediff-ignore-whitespace))
 
 
-
-
-;;(load-theme 'material)
-(set-face-attribute 'region nil :background "IndianRed4")
+;;(set-face-attribute 'region nil :background "VioletRed4")
 (setq rg-align-position-numbers t)
 (setq rg-align-line-number-field-length 3)
 (setq rg-align-column-number-field-length 3)
 (setq rg-align-line-column-separator "#")
 (setq rg-align-position-content-separator "|")
-
-
-(use-package company
-  :ensure t
-  :config
-  (setq company-idle-delay 0.5)
-  (setq company-show-numbers t)
-  (setq company-tooltip-limit 10)
-  (setq company-minimum-prefix-length 2)
-  (setq company-tooltip-align-annotations t)
-  ;; invert the navigation direction if the the completion popup-isearch-match
-  ;; is displayed on top (happens near the bottom of windows)
-  (setq company-tooltip-flip-when-above t)
-  (setq company-dabbrev-downcase nil)
-  (global-company-mode)
-  )
-
-
-
-(use-package crux
-  :ensure t
-  :bind (("C-c o" . crux-open-with)
-         ("M-o" . crux-smart-open-line)
-         ("C-c n" . crux-cleanup-buffer-or-region)
-         ("C-c f" . crux-recentf-find-file)
-         ("C-M-z" . crux-indent-defun)
-         ("C-c u" . crux-view-url)
-         ("C-c e" . crux-eval-and-replace)
-         ("C-c w" . crux-swap-windows)
-         ("C-c D" . crux-delete-file-and-buffer)
-         ("C-c r" . crux-rename-buffer-and-file)
-         ("C-c t" . crux-visit-term-buffer)
-         ("C-c k" . crux-kill-other-buffers)
-         ("C-c TAB" . crux-indent-rigidly-and-copy-to-clipboard)
-         ("C-c I" . crux-find-user-init-file)
-         ("C-c S" . crux-find-shell-init-file)
-         ("s-r" . crux-recentf-find-file)
-         ("s-j" . crux-top-join-line)
-         ("C-^" . crux-top-join-line)
-         ("s-k" . crux-kill-whole-line)
-         ("C-<backspace>" . crux-kill-line-backwards)
-         ("s-o" . crux-smart-open-line-above)
-         ([remap move-beginning-of-line] . crux-move-beginning-of-line)
-         ([(shift return)] . crux-smart-open-line)
-         ([(control shift return)] . crux-smart-open-line-above)
-         ([remap kill-whole-line] . crux-kill-whole-line)
-         ("C-c s" . crux-ispell-word-then-abbrev))
-  )
 
 ;;(use-package multi-web-mode
 ;;  :ensure t
@@ -1243,60 +897,6 @@
 ;;  (multi-web-global-mode 1)
 ;;  )
 
-
-
-(use-package helm-swoop
-  :ensure t
-  :init
-  :config
-  (global-set-key (kbd "C-c C-s") 'helm-swoop)
-  )
-
-(use-package tide
-  :ensure t
-  :after (typescript-mode company flycheck)
-  :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)
-         (before-save . tide-format-before-save))
-  )
-
-(use-package prettier-js
-  :ensure t
-  :init
-  (setq prettier-js-args '(
-                           "--trailing-comma" "none"
-                           "--bracket-spacing" "true"
-                           "--single-quote" "true"
-                           "--no-semi" "true"
-                           "--jsx-single-quote" "true"
-                           "--jsx-bracket-same-line" "true"
-                           "--print-width" "100"))
-  :config
-  )
-
-
-
-(use-package react-snippets
-  :ensure t
-  :init
-  :config
-  )
-
-
-(use-package js-auto-beautify
-  :ensure t
-  :init
-  :config
-  )
-
-(use-package auto-complete
-  :ensure t
-  :init
-  :config
-  (global-auto-complete-mode t)
-  )
-
-
 ;;(ac-config-default)
 ;;(define-key ac-mode-map (kbd "TAB") nil)
 ;;(define-key ac-completing-map (kbd "TAB") nil)
@@ -1309,10 +909,6 @@
 ;;			  ac-source-files-in-current-dir
 ;;			  )
 ;; )
-
-
-
-
 
 (defun setup-tide-mode ()
   (interactive)
@@ -1347,9 +943,7 @@
 										                     try-expand-line
 										                     try-complete-lisp-symbol-partially
 										                     try-complete-lisp-symbol))
-;; use hippie-expand instead of dabbrev
-(global-set-key (kbd "M-/") #'hippie-expand)
-(global-set-key (kbd "s-/") #'hippie-expand)
+
 
 
 
@@ -1368,7 +962,7 @@
 ;;(multi-web-global-mode 1)
 
 ;;(add-hook 'after-init-hook 'global-company-mode)
-(set-background-color "gray5")
+
 (setq idle-highlight-in-visible-buffers-idle-time 3.0)
 
 
@@ -1376,10 +970,6 @@
 ;; Note that the built-in 'describe-function' includes both functions
 ;; and macros. 'helpful-function' is functions only, so we provide
 ;; 'helpful-callable' as a drop-in replacement.
-;;(global-set-key (kbd "C-h f") #'helpful-callable)
-
-;;(global-set-key (kbd "C-h v") #'helpful-variable)
-;;(global-set-key (kbd "C-h k") #'helpful-key)
 
 (setq auto-save-visited-mode t)
 
@@ -1426,7 +1016,10 @@
             (setq sgml-basic-offset 2)
       			;;(setq indent-line-function 'indent-relative)
             (setq rainbow-mode t)
-						(set-background-color "gray5")
+						;;(set-background-color "gray5")
+            ;;(prettier-js-mode  -1)
+            (set-face-attribute 'region nil :background "#FF781F")
+            (set-face-attribute 'region nil :foreground "white")
             )
           )
 
@@ -1441,7 +1034,7 @@
 ;;			;;(imenu-add-menubar-index)
 ;;			;;(my-coldfusion-imenu-configure)
 ;;			(set-face-attribute 'region nil :background "windowBackgroundColor")
-(set-background-color "gray5")
+;;      (set-background-color "gray5")
 ;;			)
 ;;		  )
 
@@ -1455,12 +1048,14 @@
 			      ;;(imenu-add-menubar-index)
 			      ;;(my-coldfusion-imenu-configure)
 			      ;;(set-face-attribute 'region nil :background "windowBackgroundColor")
-			      (prettier-js-mode t)
+			      ;; (prettier-js-mode t)
             (setq indent-tabs-mode nil)
             (setq js-indent-level 2)
     				(setq-default js2-basic-offset 2)
             (setq rainbow-mode t)
-						(set-background-color "gray5")
+						;; (set-background-color "gray5")
+            (set-face-attribute 'region nil :background "#FF781F")
+            (set-face-attribute 'region nil :foreground "white")
 			      )
 		      )
 
@@ -1469,13 +1064,15 @@
           (lambda ()
 			      (setq dash-at-point-docset "coldfusion")
 			      (rainbow-delimiters-mode t)
-			      (prettier-js-mode t)
+			      ;; (prettier-js-mode t)
             (setq indent-tabs-mode nil)
             (setq default-tab-width 2)
             (setq rainbow-mode t)
             (setq indent-for-tab-command nil)
-            (set-background-color "gray5")
-
+            (setq-default tab-always-indent t)
+            ;;(set-background-color "gray5")
+            (set-face-attribute 'region nil :background "#FF781F")
+            (set-face-attribute 'region nil :foreground "white")
 			      )
 		      )
 
@@ -1491,16 +1088,8 @@
 (require 'multi-scratch)
 
 
-(use-package editorconfig
-  :ensure t
-  :config
-  (editorconfig-mode 1))
 
-
-
-
-
-
+(setq dabbrev-case-replace nil)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -1509,8 +1098,12 @@
  ;; If there is more than one, they won't work right.
  '(helm-selection ((t (:background "#084666" :weight bold))))
  '(magit-diff-file-heading-selection ((t (:inherit magit-diff-file-heading-highlight :background "#084666" :foreground "#00d3d0" :weight bold))))
-
-
     )
+
+(set-background-color "gray5")
+
+(global-flycheck-mode 1)
+(set-face-attribute 'flycheck-error nil :background "red" :foreground "white")
+(setq flycheck-highlighting-mode 'lines)
 
 ;; init.el ends here
